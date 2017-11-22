@@ -91,7 +91,7 @@ def update_value(key):
 @app.route('/dictionary/<key>', methods=['DELETE'])
 def delete_value(key):
     if key not in storage.keys():
-        raise StorageError("key doesn't exists", HTTP_STATUS_200_OK)
+        raise StorageError("key doesn't exists", HTTP_STATUS_404_NOT_FOUND)
 
     storage.pop(key)
 
